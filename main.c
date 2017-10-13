@@ -1,12 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/*
- * 
- */
 int main(int argc, char** argv) {
     int n;
-    int max;
+    int max;    //variabile che conterrà il valore massimo
     
     n   = 0;
     max = n;
