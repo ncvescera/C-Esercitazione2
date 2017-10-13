@@ -21,20 +21,32 @@ int main(int argc, char** argv) {
     
     if(n > 0){
         if(n == 1)
-            printf("Il numero %d e' primo",n);
+            printf("Il numero %d e' primo\n",n);
         else{
             result = isPrime(n);
             if(result)
-                printf("Il numero %d e' primo",n);
+                printf("Il numero %d e' primo\n",n);
             else
-                printf("Il numero %d NON e' primo",n);
+                printf("Il numero %d NON e' primo\n",n);
         }
-        return (EXIT_SUCCESS);
     }
     else {
         printf("Il numero deve essere maggiore di 0");
         return(EXIT_FAILURE);
     }
+    
+    //seconda parte
+    printf("Inserisci il valore massimo dell'intervallo: ");
+    scanf("%d",&n);
+    
+    printf("I numeri primi dell'intervallo [1,%d] sono: ",n);
+    
+    for(int i = 1; i<=n; i++){
+        if(isPrime(i))
+            printf("%d ",i);
+    }
+    
+    return (EXIT_SUCCESS);
 }
 
 int isPrime(int number){
