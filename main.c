@@ -15,7 +15,7 @@ int isPrime(int number);
 int main(int argc, char** argv) {
     int n;
     
-    printf("Inserisci un numero maggiore di 0: ", n);
+    printf("Inserisci un numero maggiore di 0: ");
     scanf("%d",&n);
     
     if(n > 0){
@@ -44,18 +44,17 @@ int main(int argc, char** argv) {
 }
 
 int isPrime(int number){
-    int divisori = 0;
+    int primo = TRUE;
+
     if(number == 1)
-        return FALSE;
-    else{
-        for(int i = 2; i < number; i++){
-            if(number%i == 0)
-                divisori ++;
-        }
+        primo = FALSE;
     
-        if(divisori > 0)
-            return FALSE;
-        else
-            return TRUE;
+    else{
+        for(int i = 2; i < number && primo == TRUE; i++){
+            if(number%i == 0)
+                primo = FALSE;
+        }
     }
+    
+    return primo;
 }
